@@ -1,0 +1,64 @@
+<style media="screen">
+  .subtitulo{
+    font-size: 16px;
+    font-family: Impact, Charcoal, sans-serif;
+  }
+  td, th{
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+  }
+  h3 {
+    text-shadow: 3px 3px 3px red;
+    color: black;
+    font-size: 26px;
+    font-family: 'Berkshire Swash';
+  }
+  a{
+    color: black;
+    text-shadow: 3px 3px 3px white;
+  }
+</style>
+
+<div align="left">
+  <h4><a class="btn btn-secondary" href="/"><i class="fa fa-list-alt"></i> Página Inicial</a>
+    <br>
+    <a class="btn btn-secondary" style="text-shadow: 3px 3px 3px white;" href="/addOrEdit"><i class="fa fa-plus" style="text-shadow: 3px 3px 3px white;"></i>Incluir Novo Filme</a>
+  </h4>
+  <br>
+</div>
+<h3> Lista de Filmes </h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td class="subtitulo">&nbsp;&nbsp;Título do filme&nbsp;&nbsp;</td>
+            <td class="subtitulo">&nbsp;&nbsp;Ano de lançamento&nbsp;&nbsp;</td>
+            <td class="subtitulo">&nbsp;&nbsp;Código de Barras&nbsp;&nbsp;</td>
+            <td class="subtitulo">&nbsp;&nbsp;Diretor&nbsp;&nbsp;</td>
+            <td class="subtitulo">&nbsp;&nbsp;País de Origem&nbsp;&nbsp;</td>
+            <td class="subtitulo">&nbsp;&nbsp;Duração&nbsp;&nbsp;</td>
+            <td class="subtitulo">&nbsp;&nbsp;Gênero&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;Editar&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;Deletar&nbsp;&nbsp;</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>&nbsp;&nbsp;{{this.titulo}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{this.anolancamento}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{this.codbarra}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{this.diretor}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{this.paislancamento}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{this.duracao}}&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;{{this.genero}}&nbsp;&nbsp;</td>
+            <td>
+                <a href="/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+            </td>
+            <td>
+              <a href="/delete/{{this._id}}" onclick="return confirm('Você confirma a exclusão deste filme?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

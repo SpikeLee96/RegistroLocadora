@@ -1,0 +1,70 @@
+<style>
+    .textoPrincipal {
+                font-family: Broadway;
+                font-size: 32px;
+                color: whitesmoke;
+                text-shadow: 3px 3px 3px #000000;
+            }
+    td{
+      color: black;
+      text-shadow: 3px 3px 3px red;
+    }
+    a {
+      color: black;
+      text-shadow: 3px 3px 3px white;
+    }
+</style>
+
+<div align="left">
+  <a class="btn btn-secondary" href="/"><i class="fa fa-list-alt"></i> Página Inicial</a>
+  <br>
+  <a class="btn btn-secondary" href="/list"><i class="fa fa-list-alt"></i> Ver todos</a>
+</div>
+<div align="center">
+<p class="textoPrincipal"> Incluir Filme </p>
+<form action="/" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{movie._id}}">
+
+    <div class="form-group">
+
+        <table>
+            <tbody>
+                <tr>
+                    <td> <label>Título do filme</label> </td>
+                    <td> <input align="right" type="text" class="form-control" name="titulo" placeholder="Título do filme" value="{{movie.titulo}}"> </td>
+                </tr>
+                <tr>
+                    <td> <label>Ano de lançamento</label> </td>
+                    <td> <input align="right" type="text" class="form-control" name="anolancamento" placeholder="Ano de lançamento" value="{{movie.anolancamento}}"> </td>
+                </tr>
+                <tr>
+                    <td> <label>Código de Barras</label> </td>
+                    <td> <input type="text" class="form-control" name="codbarra" placeholder="Código de Barras" value="{{movie.codbarra}}"> </td>
+                </tr>
+                <tr>
+                    <td> <label>Diretor</label> </td>
+                    <td> <input type="text" class="form-control" name="diretor" placeholder="Diretor" value="{{movie.diretor}}"> </td>
+                </tr>
+                <tr>
+                    <td> <label>Gênero</label> </td>
+                    <td> <input type="text" class="form-control" name="genero" placeholder="Gênero" value="{{movie.genero}}"> </td>
+                </tr>
+                <tr>
+                    <td> <label>País de Origem</label> </td>
+                    <td> <input type="text" class="form-control" name="paislancamento" placeholder="País de Origem" value="{{movie.paislancamento}}"> </td>
+                </tr>
+                <tr>
+                    <td> <label>Duração</label> </td>
+                    <td> <input type="text" class="form-control" name="duracao" placeholder="Duração" value="{{movie.duracao}}"> </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="form-group">
+        <br>
+        <td> <button class="btn-primary" type="submit" class="btn btn-info"><i class="fa fa-database"></i> Gravar</button> </td>
+    </div>
+</form>
+</div>
